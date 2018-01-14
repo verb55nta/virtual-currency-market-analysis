@@ -41,7 +41,7 @@ def scraping(soup):
 
 
 
-for i in range(1,21,1):
+for i in range(1,11,1):
     #print(i)
     base_url = 'https://coinmarketcap.com/'
     target_url = base_url + str(i)
@@ -70,9 +70,9 @@ num=0
 
 for k,v in sorted( volatility.items(),key=lambda x:-x[1]  ):
 
-    #if(float(market_cap[currency_name.index(k)]) < 1e8 ):
     if(v < 0.1): break
-    if(float(market_cap[currency_name.index(k)]) < 1e7 ):    
+    if(float(market_cap[currency_name.index(k)]) < 5e9 and float(market_cap[currency_name.index(k)]) > 1e5 ):    
+    #if(float(market_cap[currency_name.index(k)]) < 1e7 ):    
         #print( str(currency_name.index(k)) + ":" + str( float(market_cap[currency_name.index(k)])  )  + ":" + str(k) + ":" + str(v)  )
         print( str(currency_name.index(k)) + "\t\t" + str( float(market_cap[currency_name.index(k)])  )  + "\t\t" + str(k) + "\t\t" + str(v)  )
         num+=1
